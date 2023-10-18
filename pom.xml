@@ -246,6 +246,8 @@
                             <target>${maven.compiler.target}</target>
                             <encoding>${project.build.sourceEncoding}</encoding>
                             <compilerArgs>
+                                <arg>--add-modules</arg>
+                                <arg>ALL-DEFAULT</arg>
                                 <arg>--add-reads</arg>
                                 <arg>javafx.swt=org.eclipse.swt.cocoa.macosx.x86_64</arg>
                             </compilerArgs>
@@ -273,6 +275,8 @@
                             <target>${maven.compiler.target}</target>
                             <encoding>${project.build.sourceEncoding}</encoding>
                             <compilerArgs>
+                                <arg>--add-modules</arg>
+                                <arg>ALL-DEFAULT</arg>
                                 <arg>--add-reads</arg>
                                 <arg>javafx.swt=org.eclipse.swt.gtk.linux.ppc64le</arg>
                             </compilerArgs>
@@ -299,6 +303,8 @@
                             <target>${maven.compiler.target}</target>
                             <encoding>${project.build.sourceEncoding}</encoding>
                             <compilerArgs>
+                                <arg>--add-modules</arg>
+                                <arg>ALL-DEFAULT</arg>
                                 <arg>--add-reads</arg>
                                 <arg>javafx.swt=org.eclipse.swt.win32.win32.x86_64</arg>
                             </compilerArgs>
