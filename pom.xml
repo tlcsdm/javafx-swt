@@ -94,6 +94,24 @@
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+            <version>${swt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+            <version>${swt.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
+            <version>${swt.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -217,14 +235,6 @@
                     <family>mac</family>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -254,14 +264,6 @@
                     <name>Linux</name>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
@@ -290,14 +292,6 @@
                     <family>windows</family>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
             <build>
                 <plugins>
                     <plugin>
