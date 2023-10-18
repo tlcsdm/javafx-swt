@@ -118,9 +118,13 @@
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.stage=javafx.swt</arg>
                         <arg>--add-modules</arg>
-                        <arg>org.eclipse.swt, org.eclipse.swt.dnd, org.eclipse.swt.events, org.eclipse.swt.graphics,
-                            org.eclipse.swt.widgets
-                        </arg>
+                        <arg>org.eclipse.swt.dnd</arg>
+                        <arg>--add-modules</arg>
+                        <arg>org.eclipse.swt.events</arg>
+                        <arg>--add-modules</arg>
+                        <arg>org.eclipse.swt.graphics</arg>
+                        <arg>--add-modules</arg>
+                        <arg>org.eclipse.swt.widgets</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
