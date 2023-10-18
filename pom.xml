@@ -238,6 +238,8 @@
                             <compilerArgs>
                                 <arg>--add-modules</arg>
                                 <arg>org.eclipse.swt.cocoa.macosx.x86_64</arg>
+                                <arg>--add-reads</arg>
+                                <arg>javafx.swt=org.eclipse.swt.cocoa.macosx.x86_64</arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>
@@ -273,6 +275,8 @@
                             <compilerArgs>
                                 <arg>--add-modules</arg>
                                 <arg>org.eclipse.swt.gtk.linux.ppc64le</arg>
+                                <arg>--add-reads</arg>
+                                <arg>javafx.swt=org.eclipse.swt.gtk.linux.ppc64le</arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>
@@ -307,6 +311,8 @@
                             <compilerArgs>
                                 <arg>--add-modules</arg>
                                 <arg>org.eclipse.swt.win32.win32.x86_64</arg>
+                                <arg>--add-reads</arg>
+                                <arg>javafx.swt=org.eclipse.swt.win32.win32.x86_64</arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>
