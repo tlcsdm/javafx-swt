@@ -94,24 +94,6 @@
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.platform</groupId>
-            <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
-            <version>${swt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.platform</groupId>
-            <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
-            <version>${swt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.platform</groupId>
-            <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
-            <version>${swt.version}</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -135,6 +117,10 @@
                         <arg>javafx.graphics/com.sun.javafx.embed=javafx.swt</arg>
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.stage=javafx.swt</arg>
+                        <arg>--add-modules</arg>
+                        <arg>org.eclipse.swt, org.eclipse.swt.dnd, org.eclipse.swt.events, org.eclipse.swt.graphics,
+                            org.eclipse.swt.widgets
+                        </arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
@@ -235,24 +221,14 @@
                     <family>mac</family>
                 </os>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${maven-compiler-plugin.version}</version>
-                        <configuration>
-                            <source>${maven.compiler.source}</source>
-                            <target>${maven.compiler.target}</target>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <compilerArgs>
-                                <arg>--add-modules</arg>
-                                <arg>org.eclipse.swt.cocoa.macosx.x86_64</arg>
-                            </compilerArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
+                    <version>${swt.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>unix</id>
@@ -262,24 +238,14 @@
                     <name>Linux</name>
                 </os>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${maven-compiler-plugin.version}</version>
-                        <configuration>
-                            <source>${maven.compiler.source}</source>
-                            <target>${maven.compiler.target}</target>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <compilerArgs>
-                                <arg>--add-modules</arg>
-                                <arg>org.eclipse.swt.gtk.linux.ppc64le</arg>
-                            </compilerArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
+                    <version>${swt.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>windows</id>
@@ -288,26 +254,14 @@
                     <family>windows</family>
                 </os>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${maven-compiler-plugin.version}</version>
-                        <configuration>
-                            <source>${maven.compiler.source}</source>
-                            <target>${maven.compiler.target}</target>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <compilerArgs>
-                                <!--                                <arg>&#45;&#45;add-modules</arg>-->
-                                <!--                                <arg>org.eclipse.swt.win32.win32.x86_64</arg>-->
-                                <arg>--add-exports</arg>
-                                <arg>org.eclipse.swt.win32.win32.x86_64=javafx.swt</arg>
-                            </compilerArgs>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <dependencies>
+                <dependency>
+                    <groupId>org.eclipse.platform</groupId>
+                    <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+                    <version>${swt.version}</version>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 
