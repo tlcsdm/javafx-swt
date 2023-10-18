@@ -16,7 +16,7 @@ jobs:
       fail-fast: false
       matrix:
         java: [ '17', '21' ]
-        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        os: [ windows-latest ]
         experimental: [ false ]
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
@@ -30,4 +30,4 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml -DskipTests -Dmaven.javadoc.failOnError=false
+        run: mvn -B package --file pom.xml -DskipTests

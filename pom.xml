@@ -40,7 +40,6 @@
     <url>https://github.com/tlcsdm/javafx-swt</url>
 
     <properties>
-        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
         <maven.test.skip>true</maven.test.skip>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -153,6 +152,7 @@
                         <version>${maven-javadoc-plugin.version}</version>
                         <configuration>
                             <show>private</show>
+                            <failOnError>false</failOnError>
                             <nohelp>true</nohelp>
                             <charset>UTF-8</charset>
                             <encoding>UTF-8</encoding>
