@@ -124,9 +124,15 @@
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.stage=javafx.swt</arg>
                         <arg>--add-modules</arg>
+                        <arg>javafx.base</arg>
+                        <arg>--add-modules</arg>
+                        <arg>javafx.graphics</arg>
+                        <arg>--add-modules</arg>
                         <arg>${swt.artifactId}</arg>
                         <arg>--add-reads</arg>
-                        <arg>javafx.swt=${swt.artifactId}</arg>
+                        <arg>javafx.swt=${swt.artifactId},javafx.base,javafx.graphics</arg>
+                       <arg>--add-exports</arg>
+                        <arg>javafx.swt/javafx.embed.swt</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
