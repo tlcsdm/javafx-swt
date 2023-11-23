@@ -113,10 +113,6 @@
                     <target>${maven.compiler.target}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgs>
-						<arg>--module-path</arg>
-                        <arg>.</arg>
-                        <arg>--module</arg>
-                        <arg>javafx.swt/javafx.embed.swt</arg>
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.tk=javafx.swt</arg>
                         <arg>--add-exports</arg>
@@ -127,16 +123,6 @@
                         <arg>javafx.graphics/com.sun.javafx.embed=javafx.swt</arg>
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.stage=javafx.swt</arg>
-                        <arg>--add-modules</arg>
-                        <arg>javafx.base</arg>
-                        <arg>--add-modules</arg>
-                        <arg>javafx.graphics</arg>
-                        <arg>--add-modules</arg>
-                        <arg>${swt.artifactId}</arg>
-                        <arg>--add-reads</arg>
-                        <arg>javafx.swt=${swt.artifactId},javafx.base,javafx.graphics</arg>
-                        <arg>--add-opens</arg>
-                        <arg>javafx.swt/javafx.embed.swt=ALL-UNNAMED</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
@@ -144,6 +130,35 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven-jar-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Automatic-Module-Name>javafx.swt</Automatic-Module-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <extensions>true</extensions>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>5.1.8</version>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            javafx.embed.swt.*
+                        </Export-Package>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -239,10 +254,11 @@
             </activation>
             <properties>
                 <swt.artifactId>org.eclipse.swt.cocoa.macosx.x86_64</swt.artifactId>
+                <!-- org.eclipse.swt.cocoa.macosx.aarch64 -->
             </properties>
         </profile>
         <profile>
-            <id>unix</id>
+            <id>linux</id>
             <activation>
                 <os>
                     <name>linux</name>
@@ -250,6 +266,7 @@
             </activation>
             <properties>
                 <swt.artifactId>org.eclipse.swt.gtk.linux.ppc64le</swt.artifactId>
+                <!-- org.eclipse.swt.gtk.linux.aarch64 -->
             </properties>
         </profile>
         <profile>
