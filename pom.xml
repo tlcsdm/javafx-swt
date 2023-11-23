@@ -131,8 +131,8 @@
                         <arg>${swt.artifactId}</arg>
                         <arg>--add-reads</arg>
                         <arg>javafx.swt=${swt.artifactId},javafx.base,javafx.graphics</arg>
-                       <arg>--add-exports</arg>
-                        <arg>javafx.swt/javafx.embed.swt</arg>
+                        <arg>--add-opens</arg>
+                        <arg>javafx.swt/javafx.embed.swt=ALL-UNNAMED</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
