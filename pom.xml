@@ -54,6 +54,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <javafx.version>17.0.9</javafx.version>
         <swt.version>3.124.100</swt.version>
+        <swt.artifactId></swt.artifactId>
     </properties>
 
     <issueManagement>
@@ -94,6 +95,11 @@
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.platform</groupId>
+            <artifactId>${swt.artifactId}</artifactId>
+            <version>${swt.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -117,6 +123,10 @@
                         <arg>javafx.graphics/com.sun.javafx.embed=javafx.swt</arg>
                         <arg>--add-exports</arg>
                         <arg>javafx.graphics/com.sun.javafx.stage=javafx.swt</arg>
+                        <arg>--add-modules</arg>
+                        <arg>${swt.artifactId}</arg>
+                        <arg>--add-reads</arg>
+                        <arg>javafx.swt=${swt.artifactId}</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
@@ -217,14 +227,9 @@
                     <family>mac</family>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.cocoa.macosx.x86_64</swt.artifactId>
+            </properties>
         </profile>
         <profile>
             <id>unix</id>
@@ -234,14 +239,9 @@
                     <name>Linux</name>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.gtk.linux.ppc64le</swt.artifactId>
+            </properties>
         </profile>
         <profile>
             <id>windows</id>
@@ -250,14 +250,9 @@
                     <family>windows</family>
                 </os>
             </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.eclipse.platform</groupId>
-                    <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
-                    <version>${swt.version}</version>
-                    <scope>provided</scope>
-                </dependency>
-            </dependencies>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.win32.win32.x86_64</swt.artifactId>
+            </properties>
         </profile>
     </profiles>
 
