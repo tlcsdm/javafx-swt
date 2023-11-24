@@ -252,27 +252,51 @@
             </distributionManagement>
         </profile>
         <profile>
-            <id>mac</id>
+            <id>mac_x86_64</id>
             <activation>
                 <os>
                     <name>mac os x</name>
+                    <arch>x86_64</arch>
                 </os>
             </activation>
             <properties>
                 <swt.artifactId>org.eclipse.swt.cocoa.macosx.x86_64</swt.artifactId>
-                <!-- org.eclipse.swt.cocoa.macosx.aarch64 -->
             </properties>
         </profile>
         <profile>
-            <id>linux</id>
+            <id>mac_aarch64</id>
+            <activation>
+                <os>
+                    <name>mac os x</name>
+                    <arch>aarch64</arch>
+                </os>
+            </activation>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.cocoa.macosx.aarch64</swt.artifactId>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux_x86_64</id>
             <activation>
                 <os>
                     <name>linux</name>
+                    <arch>x86_64</arch>
                 </os>
             </activation>
             <properties>
                 <swt.artifactId>org.eclipse.swt.gtk.linux.ppc64le</swt.artifactId>
-                <!-- org.eclipse.swt.gtk.linux.aarch64 -->
+            </properties>
+        </profile>
+        <profile>
+            <id>linux_aarch64</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                    <arch>aarch64</arch>
+                </os>
+            </activation>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.gtk.linux.aarch64</swt.artifactId>
             </properties>
         </profile>
         <profile>
