@@ -276,18 +276,6 @@
             </properties>
         </profile>
         <profile>
-            <id>linux_x86_64</id>
-            <activation>
-                <os>
-                    <name>linux</name>
-                    <arch>x86_64</arch>
-                </os>
-            </activation>
-            <properties>
-                <swt.artifactId>org.eclipse.swt.gtk.linux.ppc64le</swt.artifactId>
-            </properties>
-        </profile>
-        <profile>
             <id>linux_aarch64</id>
             <activation>
                 <os>
@@ -297,6 +285,17 @@
             </activation>
             <properties>
                 <swt.artifactId>org.eclipse.swt.gtk.linux.aarch64</swt.artifactId>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <activation>
+                <os>
+                    <name>linux</name>
+                </os>
+            </activation>
+            <properties>
+                <swt.artifactId>org.eclipse.swt.gtk.linux.ppc64le</swt.artifactId>
             </properties>
         </profile>
         <profile>
