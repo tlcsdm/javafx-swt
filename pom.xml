@@ -38,9 +38,12 @@
     <packaging>jar</packaging>
     <description>javafx-swt</description>
     <url>https://github.com/tlcsdm/javafx-swt</url>
+    <inceptionYear>2023</inceptionYear>
 
     <properties>
+        <project.github.repository>tlcsdm/javafx-swt</project.github.repository>
         <maven.test.skip>true</maven.test.skip>
+        <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
@@ -54,7 +57,7 @@
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <javafx.version>21.0.1</javafx.version>
+        <javafx.version>21.0.2</javafx.version>
         <swt.version>3.124.100</swt.version>
         <swt.artifactId></swt.artifactId>
     </properties>
