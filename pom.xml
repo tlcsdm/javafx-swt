@@ -30,7 +30,7 @@
 
   <groupId>com.tlcsdm</groupId>
   <artifactId>javafx-swt</artifactId>
-  <version>21.0.3</version>
+  <version>21.0.4</version>
   <packaging>jar</packaging>
   <name>javafx-swt</name>
   <description>javafx-swt</description>
@@ -76,7 +76,7 @@
     <nexus-staging-maven-plugin.version>1.7.0</nexus-staging-maven-plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <javafx.version>21.0.3</javafx.version>
+    <javafx.version>21.0.4</javafx.version>
     <swt.version>3.124.100</swt.version>
     <swt.artifactId></swt.artifactId>
   </properties>
