@@ -116,6 +116,7 @@
           <target>${maven.compiler.target}</target>
           <encoding>${project.build.sourceEncoding}</encoding>
           <compilerArgs>
+            <arg>-XDignore.symbol.file</arg>
             <arg>--add-exports</arg>
             <arg>javafx.graphics/com.sun.javafx.tk=javafx.swt</arg>
             <arg>--add-exports</arg>
